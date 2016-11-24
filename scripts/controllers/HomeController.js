@@ -179,8 +179,7 @@
 
            $scope.efeitos = [{"id":"1","texto":"Macaco"},
            {"id":"2","texto":"Trovao"},
-           {"id":"3","texto":"Sinos"},
-           {"id": "4","texto":"Telefone"}];
+           {"id":"3","texto":"Sino"}];
 
     
            $scope.prepararJogo = function() {
@@ -237,8 +236,8 @@
             client && client.publish('topicoPrincipal', String(msg));
             $scope.message = cod;
           };
-          $scope.efeitoTrovao= function(cod) {
-            var msg = '7' + cod;
+          $scope.efeitoTrovao= function() {
+            var msg = '70' ;
             $scope.tocarTrovao();
             client && client.publish('topicoPrincipal', String(msg));
             $scope.message = cod;
