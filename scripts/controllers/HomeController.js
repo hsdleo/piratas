@@ -12,7 +12,7 @@
        var timer1 = 3600;
 
        function formatNumber(n) {return (n<10? '0' : '') + n;}
-       client = mows.createClient('ws://192.168.0.100:9001/mqtt')
+       client = mows.createClient('ws://192.168.0.100:9001/mqtt');
        client && client.subscribe('topicoArduinoPronto');
 
        client.on('message', function (topic, message) {
@@ -22,12 +22,24 @@
           $scope.aguardando = false;
           $scope.preparar = true;
           $scope.tocarNada();
-         }
+         }else{
         if(message=="2"){
           $scope.aguardando = false;
           $scope.preparar = false;
           $scope.tocarNada();
-        }
+        }else{
+          if(message=="3"){
+          $scope.tocarAmbiente();
+          $scope.tocarMedo();
+   
+          }
+          else{
+            if(message=="4"){
+             $scope.tocarMedo();
+            $scope.tocarPassagem();
+            }
+
+        }}}
 
          $scope.message = message;
        });
@@ -40,34 +52,20 @@
         $scope.audioAmbiente.setVolume(0.2);
         $scope.audioAmbiente.play();
       };
+  
+      $scope.tocarMedo = function () {
+        $scope.audioAmbiente.setVolume(0.2);
+        $scope.audioAmbiente.playPause();
+      };
+      $scope.tocarPassagem= function () {
+        $scope.audioAmbiente.setVolume(0.2);
+        $scope.audioAmbiente.play();
+      };
       $scope.tocarDerrota = function () {
         $scope.audioDerrota.setVolume(0.6);
         $scope.audioDerrota.play();
       };
-      $scope.tocarDicaCama = function () {
-        $scope.audioDicaCama.setVolume(0.25);
-        $scope.audioDicaCama.play();
-      };
-      $scope.tocarDicaDirecoes = function () {
-        $scope.audioDicaDirecoes.setVolume(0.25);
-        $scope.audioDicaDirecoes.play();
-      };
-      $scope.tocarDicaFichas = function () {
-        $scope.audioDicaFichas.setVolume(0.25);
-        $scope.audioDicaFichas.play();
-      };
-      $scope.tocarDicaAlvo = function () {
-        $scope.audioDicaAlvo.setVolume(0.25);
-        $scope.audioDicaAlvo.play();
-      };
-      $scope.tocarDicaCobertor = function () {
-        $scope.audioDicaCobertor.setVolume(0.25);
-        $scope.audioDicaCobertor.play();
-      };
-      $scope.tocarTelefone = function () {
-        $scope.audioTelefone.setVolume(0.25);
-        $scope.audioTelefone.playPause();
-      };
+
       $scope.tocarArma = function () {
         $scope.audioArma.setVolume(0.25);
         $scope.audioArma.playPause();
@@ -89,19 +87,6 @@
       $scope.tocarObjetos = function () {
         $scope.audioObjetos.setVolume(1);
         $scope.audioObjetos.play();
-      };
-      $scope.tocarGarrafas = function () {
-        $scope.audioGarrafas.setVolume(0.6);
-        $scope.audioGarrafas.play();
-      };
-      $scope.tocarDescarga = function () {
-        $scope.audioDescarga.setVolume(0.2);
-        $scope.audioDescarga.play();
-      };
-      $scope.tocarDisjuntor = function () {
-        $scope.audioDisjuntor.setVolume(0.2);
-        $scope.audioDisjuntor.play();
-        
       };
 
 
