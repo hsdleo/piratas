@@ -1,0 +1,61 @@
+<div id="diviniciar" ng-init="aguardando = true;preparar = false;iniciar = false;resetar = false">
+<label ng-show = "aguardando"> Aguardando Controlador</label>
+<button class= "btiniciar" type="button" ng-show = "preparar" ng-click = "prepararJogo();preparar = false;iniciar = true">Preparar</button>
+<button class= "btiniciar" type="button" ng-show = "iniciar" ng-click = "startJogo();iniciar = false;resetar = true">Iniciar</button>
+<audio media-player="audioDerrota" data-playlist="playDerrota">
+  <source src="/sounds/derrota.mp3" type="audio/mp3">
+  </audio>
+  <audio media-player="audioTelefone" data-playlist="playTelefone">
+  <source src="/sounds/telefone.mp3" type="audio/mp3">
+  </audio>
+<audio media-player="audioAmbiente" data-playlist="playlist4">
+  <source src="/sounds/ambiente.mp3" type="audio/mp3">
+  </audio>
+  <audio media-player="audioNada" data-playlist="playlistNada">
+  <source src="/sounds/nada.mp3" type="audio/mp3">
+  </audio>
+  <audio media-player="audioArma" data-playlist="playlistArma">
+  <source src="/sounds/arma.mp3" type="audio/mp3">
+  </audio>
+  <audio media-player="audioUnlock" data-playlist="playlistUnlock">
+  <source src="/sounds/unlock.mp3" type="audio/mp3">
+  </audio>
+<!--button class= "btresetar"  ng-show = "resetar" type="button" ng-click = "resetarJogo();preparar = true;resetar = false">Recomeçar</button-->
+</div>
+<div id = "clockdiv">
+  <div>
+    <span class = "minuto">{{minuto}}</span>
+  </div>
+
+  <div>
+    <span class = "segundo">{{segundo}}</span>
+  </div>
+</div>
+
+<div>
+  <center><h3>Acionamentos</h3></center> 
+  <acio></acio>
+</div>
+
+
+<div>
+  <center><h3>Efeitos</h3></center>
+  <efeitos></efeitos>
+</div>
+<!--div>
+  <center><h3>Dicas</h3></center>
+  <dicas></dicas>
+</div-->
+<!--div>
+  <center><h3>Alertas</h3></center>
+  <alertas></alertas>
+</div-->
+
+</br></br>
+
+
+
+
+
+
+

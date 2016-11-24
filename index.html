@@ -1,0 +1,62 @@
+<!-- index.html -->
+    <!DOCTYPE html>
+    <html ng-app="app">
+    <head>
+      <!-- SCROLLS -->
+      <!-- load bootstrap and fontawesome via CDN -->
+      <!--link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"-->
+      <link href='styles/bootstrap.min.css' rel='stylesheet' integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+      <link href='styles/main.css' rel='stylesheet' type="text/css">
+      <script src="node_modules/angular/angular.min.js"></script>
+      <script src="node_modules/angular-ui-router/release/angular-ui-router.min.js"></script>
+
+      <script src="scripts/config.js"></script>
+      <script src="scripts/controllers/HomeController.js"></script>
+      <script src="scripts/controllers/AboutController.js"></script>
+
+      <link rel="stylesheet" type="text/css" href="node_modules/ng-audio/dist/css/ng-audio.min.css">
+
+      <!--script type="text/javascript" src="node_modules/ng-audio/dist/ng-audio.min.js"></script-->
+
+      <!--script src="//colthreepv.github.io/angular-media-player/dist/angular-media-player.min.js" type="text/javascript"></script-->
+
+
+
+      <!--script src="bower_components/angular-timer/dist/angular-timer.min.js" ></script-->
+      <script src="scripts/angular-media-player.min.js" type="text/javascript"></script>
+
+      <script src="scripts/directives/efeitos.js" type="text/javascript"></script>
+      <script src="scripts/directives/dicas.js" type="text/javascript"></script>
+      <script src="scripts/directives/alertas.js" type="text/javascript"></script>
+      <script src="scripts/directives/acio.js" type="text/javascript"></script>
+
+
+    </head>
+    <body>
+
+        <!-- HEADER AND NAVBAR -->
+        <header>
+            <nav class="navbar navbar-default">
+            <div class="container">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="/">Piratas</a>
+                </div>
+
+                <!--ul class="nav navbar-nav navbar-right">
+                    <li><a ui-sref="alcatraz"><i class="fa fa-home"></i> Alcatraz</a></li>
+                    <li><a ui-sref="about"><i class="fa fa-shield"></i> Piratas</a></li>
+                </ul-->
+            </div>
+            </nav>
+        </header>
+
+
+        <div id="main">
+            <!-- MAIN CONTENT AND INJECTED VIEWS -->
+            <div ui-view></div>
+        </div>
+        <script src="scripts/controllers/assets/mows.js"></script>
+
+    </body>
+    </html>

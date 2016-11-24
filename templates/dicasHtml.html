@@ -1,0 +1,36 @@
+<div class = "list">
+<audio media-player="audioDicaCama" data-playlist="playlistDicaCama">
+<source src="/sounds/dicaCama.mp3" type="audio/mp3">
+</audio>
+<audio media-player="audioDicaFichas" data-playlist="playlistDicaFichas">
+<source src="/sounds/dicaFichas.mp3" type="audio/mp3">
+</audio>
+<audio media-player="audioDicaDirecoes" data-playlist="playlistDicaDirecoes">
+<source src="/sounds/dicaDirecoes.mp3" type="audio/mp3">
+</audio>
+<audio media-player="audioDicaAlvo" data-playlist="playlistDicaAlvo">
+<source src="/sounds/dicaAlvo.mp3" type="audio/mp3">
+</audio>
+<audio media-player="audioDicaCobertor" data-playlist="playlistDicaCobertor">
+<source src="/sounds/dicaCobertor.mp3" type="audio/mp3">
+</audio>
+	<div class="item" > 
+	 	          <!--div audio options="sirene"/> 
+	              <button class="btn btn-sm btn-default"
+	              ng-click="imprimir(dicas[0])"
+	              >{{dicas[0].texto}}</button-->
+	              <button class="btn btn-sm btn-default"
+	              ng-click="tocarDicaCama()" >{{dicas[0].texto}}</button> 
+	              <button class="btn btn-sm btn-default"
+	              ng-click="tocarDicaFichas()" >{{dicas[2].texto}}</button> 
+	              <button class="btn btn-sm btn-default"
+	              ng-click="tocarDicaDirecoes()" >{{dicas[3].texto}}</button> 
+	              <button class="btn btn-sm btn-default"
+	              ng-click="tocarDicaAlvo()" >{{dicas[4].texto}}</button> 
+	              <button class="btn btn-sm btn-default"
+	              ng-click="tocarDicaCobertor()" >{{dicas[5].texto}}</button> 
+	           
+
+	          </div>
+</div>
+
