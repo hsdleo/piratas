@@ -78,11 +78,14 @@
         $scope.audioTrovao.setVolume(0.2);
         $scope.audioTrovao.play();
       };
+      $scope.tocarMacaco = function () {
+        $scope.audioMacaco.setVolume(0.2);
+        $scope.audioMacaco.play();
+      };
 
-
-      $scope.tocarSirene = function () {
-        $scope.audioSirene.setVolume(0.2);
-        $scope.audioSirene.playPause();
+      $scope.tocarSino = function () {
+        $scope.audioSino.setVolume(0.2);
+        $scope.audioSino.playPause();
       };
       $scope.tocarObjetos = function () {
         $scope.audioObjetos.setVolume(1);

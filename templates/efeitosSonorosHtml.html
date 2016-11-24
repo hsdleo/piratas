@@ -1,20 +1,20 @@
 <div class = "list">
 	<div class="item" >    
 	<button class="btn btn-sm btn-default" 
-	ng-click="efeitoMacaco()" >{{efeitos[0].texto}}</button>
+	ng-click="tocarMacaco()" >{{efeitos[0].texto}}</button>
 	<button class="btn btn-sm btn-default"
-	ng-click="efeitoTrovao()" >{{efeitos[1].texto}}</button> 
+	ng-click="tocarTrovao()" >{{efeitos[1].texto}}</button> 
 	<button class="btn btn-sm btn-default"
 	ng-click="tocarSino()" >{{efeitos[2].texto}}</button> 
 	
 
-	<!--audio media-player="audioMacaco" data-playlist="playlistMacaco">
+	<audio media-player="audioMacaco" data-playlist="playlistMacaco">
 	<source src="/sounds/macaco.mp3" type="audio/mp3">
-	</audio-->	
+	</audio>	
 
-	<!--audio media-player="audioTrovao" data-playlist="playlistTrovao">
+	<audio media-player="audioTrovao" data-playlist="playlistTrovao">
 	<source src="/sounds/trovao.mp3" type="audio/mp3">
-	</audio-->
+	</audio>
 
 	<audio media-player="audioSino" data-playlist="playlistSino">
 	<source src="/sounds/sino.mp3" type="audio/mp3">
