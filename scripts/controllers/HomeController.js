@@ -29,13 +29,15 @@
           $scope.tocarNada();
         }else{
           if(message=="3"){
-          $scope.tocarAmbiente();
+          $scope.audioTrovao.setVolume(0.5);
+          $scope.audioTrovao.play();
           $scope.tocarMedo();
+          $scope.efeitoTrovao();
    
           }
           else{
             if(message=="4"){
-             $scope.tocarMedo();
+            $scope.somMedo.stop();
             $scope.tocarPassagem();
             }
 
@@ -49,17 +51,17 @@
         $scope.audioNada.stop();
        };
       $scope.tocarAmbiente = function () {
-        $scope.audioAmbiente.setVolume(0.2);
-        $scope.audioAmbiente.play();
+        $scope.audioAmbiente.setVolume(0.5);
+        $scope.audioAmbiente.playPause();
       };
   
       $scope.tocarMedo = function () {
-        $scope.audioAmbiente.setVolume(0.2);
-        $scope.audioAmbiente.playPause();
+        $scope.somMedo.setVolume(0.7);
+        $scope.somMedo.playPause();
       };
       $scope.tocarPassagem= function () {
-        $scope.audioAmbiente.setVolume(0.2);
-        $scope.audioAmbiente.play();
+        $scope.aberturaPassagem.setVolume(0.4);
+        $scope.aberturaPassagem.playPause();
       };
       $scope.tocarDerrota = function () {
         $scope.audioDerrota.setVolume(0.6);
@@ -75,8 +77,10 @@
         $scope.audioUnlock.playPause();
       };
       $scope.tocarTrovao = function () {
-        $scope.audioTrovao.setVolume(0.2);
+        $scope.audioTrovao.setVolume(0.5);
         $scope.audioTrovao.play();
+        var msg = '70' ;
+        client && client.publish('topicoPrincipal', String(msg));
       };
       $scope.tocarMacaco = function () {
         $scope.audioMacaco.setVolume(0.2);
@@ -167,28 +171,30 @@
 
            $scope.efeitos = [{"id":"1","texto":"Macaco"},
            {"id":"2","texto":"Trovao"},
-           {"id":"3","texto":"Sino"}];
+           {"id":"3","texto":"Sino"},
+           {"id":"2","texto":"Ambiente"},
+           {"id":"2","texto":"Medo"},
+           {"id":"2","texto":"Passagem"}];
 
     
            $scope.prepararJogo = function() {
             client && client.publish('topicoPrincipal', String('01'));
-            $scope.comandoLuzCapitao(1);
+            $scope.comandoLuzCapitao(0);
 
           };
           $scope.startJogo = function() {
             $scope.startTimer();
             $scope.tocarAmbiente();
-            $scope.comandoLuzCapitao(0);
 
             client && client.publish('topicoPrincipal', String('01'));
           };
 
 
           $scope.resetarJogo = function() {
-            $scope.resetTimer();
-            $scope.comandoLuzCela(0);
-            $scope.audioAmbiente.stop();
-            client && client.publish('topicoPrincipal', String('00'));
+            //$scope.resetTimer();
+            //$scope.comandoLuzCela(0);
+            //$scope.audioAmbiente.stop();
+            //client && client.publish('topicoPrincipal', String('00'));
           };
 
           $scope.comandoPassagem = function(cod) {
@@ -226,12 +232,10 @@
           };
           $scope.efeitoTrovao= function() {
             var msg = '70' ;
-            $scope.tocarTrovao();
             client && client.publish('topicoPrincipal', String(msg));
-            $scope.message = cod;
           };
 
-          
+        
 
         }
       })();
