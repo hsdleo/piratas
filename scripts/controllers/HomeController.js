@@ -20,28 +20,39 @@
 
          if(message=="1"){
           $scope.aguardando = false;
-          $scope.preparar = true;
+          $scope.aguardandoBau = true;
+          $scope.preparar = false;
           $scope.tocarNada();
          }else{
         if(message=="2"){
           $scope.aguardando = false;
-          $scope.preparar = false;
+          $scope.preparar = true;
+          $scope.aguardandoBau = false;
           $scope.tocarNada();
         }else{
           if(message=="3"){
-          $scope.audioTrovao.setVolume(0.5);
+          $scope.audioTrovao.setVolume(0.8);
           $scope.audioTrovao.play();
-          $scope.tocarMedo();
           $scope.efeitoTrovao();
-   
+          $scope.tocarMedo();
           }
           else{
             if(message=="4"){
             $scope.somMedo.stop();
             $scope.tocarPassagem();
             }
+            else{
+            if(message=="5"){
+            $scope.audioTrovao.setVolume(0.8);
+            $scope.audioTrovao.play();
+             $scope.acaoBau();
+            }
+            else{
+            if(message=="6"){
+            $scope.tocarPassagem();
+            }
 
-        }}}
+        }}}}}
 
          $scope.message = message;
        });
@@ -68,16 +79,9 @@
         $scope.audioDerrota.play();
       };
 
-      $scope.tocarArma = function () {
-        $scope.audioArma.setVolume(0.25);
-        $scope.audioArma.playPause();
-      };
-      $scope.tocarUnlock = function () {
-        $scope.audioUnlock.setVolume(0.25);
-        $scope.audioUnlock.playPause();
-      };
+    
       $scope.tocarTrovao = function () {
-        $scope.audioTrovao.setVolume(0.5);
+        $scope.audioTrovao.setVolume(0.8 );
         $scope.audioTrovao.play();
         var msg = '70' ;
         client && client.publish('topicoPrincipal', String(msg));
@@ -185,8 +189,8 @@
           $scope.startJogo = function() {
             $scope.startTimer();
             $scope.tocarAmbiente();
-
-            client && client.publish('topicoPrincipal', String('01'));
+            $scope.comandoLuzCapitao(1);
+            //client && client.publish('topicoPrincipal', String('01'));
           };
 
 
@@ -233,6 +237,11 @@
           $scope.efeitoTrovao= function() {
             var msg = '70' ;
             client && client.publish('topicoPrincipal', String(msg));
+          };
+          $scope.acaoBau= function() {
+            var msg = '80' ;
+            client && client.publish('topicoPrincipal', String(msg));
+            $scope.tocarAmbiente();
           };
 
         
