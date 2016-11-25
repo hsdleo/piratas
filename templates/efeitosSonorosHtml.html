@@ -11,10 +11,10 @@
 	ng-click="tocarAmbiente()" >{{efeitos[3].texto}}</button> 
 
 	<button class="btn btn-sm btn-default"
-	ng-click="tocarMedo()" >{{efeitos[4].texto}}</button> 
+	ng-click="tocarExplosao()" >{{efeitos[4].texto}}</button> 
 
 	<button class="btn btn-sm btn-default"
-	ng-click="tocarPassagem()" >{{efeitos[5].texto}}</button> 
+	ng-click="tocarDerrota()" >{{efeitos[5].texto}}</button> 
 	
 
 	<audio media-player="audioMacaco" data-playlist="playlistMacaco">
@@ -28,6 +28,12 @@
 	<audio media-player="audioSino" data-playlist="playlistSino">
 	<source src="/sounds/sino.mp3" type="audio/mp3">
 	</audio>
+
+
+
+	<audio media-player="audioDerrota" data-playlist="playDerrota">
+    <source src="/sounds/derrota.mp3" type="audio/mp3">
+    </audio>
 
 
 	</div>
