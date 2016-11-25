@@ -52,7 +52,7 @@
             }
             else{
             if(message=="6"){
-            $scope.tocarPassagem();
+            $scope.tocarTimao();
             }
 
         }}}}}
@@ -66,7 +66,7 @@
         $scope.audioNada.stop();
        };
       $scope.tocarAmbiente = function () {
-        $scope.audioAmbiente.setVolume(0.5);
+        $scope.audioAmbiente.setVolume(0.6);
         $scope.audioAmbiente.playPause();
       };
   
@@ -81,6 +81,15 @@
       $scope.tocarDerrota = function () {
         $scope.audioDerrota.setVolume(0.6);
         $scope.audioDerrota.play();
+      };
+      $scope.tocarTimao = function () {
+        $scope.audioAmbiente.playPause();
+        $scope.audioTimao.setVolume(0.8);
+        $scope.audioTimao.play();
+      };
+      $scope.tocarExplosao = function () {
+        $scope.audioExplosao.setVolume(0.5);
+        $scope.audioExplosao.play();
       };
 
     
