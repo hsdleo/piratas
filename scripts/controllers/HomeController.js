@@ -84,7 +84,7 @@
       };
       $scope.tocarTimao = function () {
         $scope.audioAmbiente.playPause();
-        $scope.audioTimao.setVolume(0.6);
+        $scope.audioTimao.setVolume(0.8);
         $scope.audioTimao.play();
       };
       $scope.tocarExplosao = function () {
