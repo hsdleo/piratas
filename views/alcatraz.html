@@ -1,5 +1,6 @@
-<div id="diviniciar" ng-init="aguardando = true;preparar = false;iniciar = false;resetar = false">
+<div id="diviniciar" ng-init="aguardando = true;preparar = false;aguardandoBau=false;iniciar = false;resetar = false">
   <label ng-show = "aguardando"> Aguardando Controlador</label>
+  <label ng-show = "aguardandoBau"> Aguardando Bau</label>
   <button class= "btiniciar" type="button" ng-show = "preparar" ng-click = "prepararJogo();preparar = false;iniciar = true">Preparar</button>
   <button class= "btiniciar" type="button" ng-show = "iniciar" ng-click = "startJogo();iniciar = false;resetar = true">Iniciar</button>
   <audio media-player="audioDerrota" data-playlist="playDerrota">
@@ -11,7 +12,7 @@
       </audio>
 
       <audio media-player="aberturaPassagem" data-playlist="playlistAbertura">
-      <source src="/sounds/aberturaPassagem.mp3" type="audio/mp3">
+      <source src="/sounds/somPassagem.mp3" type="audio/mp3">
       </audio>
 
       <audio media-player="somMedo" data-playlist="playlistMedo">
