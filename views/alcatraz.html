@@ -3,12 +3,10 @@
   <label ng-show = "aguardandoBau"> Aguardando Bau</label>
   <button class= "btiniciar" type="button" ng-show = "preparar" ng-click = "prepararJogo();preparar = false;iniciar = true">Preparar</button>
   <button class= "btiniciar" type="button" ng-show = "iniciar" ng-click = "startJogo();iniciar = false;resetar = true">Iniciar</button>
-  <audio media-player="audioDerrota" data-playlist="playDerrota">
-    <source src="/sounds/derrota.mp3" type="audio/mp3">
-    </audio>
+  
 
 <audio media-player="audioTimao" data-playlist="playTimao">
-    <source src="/sounds/audioTimao.mp3" type="audio/mp3">
+    <source src="/sounds/audioTimaoFinal.mp3" type="audio/mp3">
     </audio>
 
     <audio media-player="audioExplosao" data-playlist="playExplosao">
