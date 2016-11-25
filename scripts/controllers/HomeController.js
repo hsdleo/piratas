@@ -66,7 +66,7 @@
         $scope.audioNada.stop();
        };
       $scope.tocarAmbiente = function () {
-        $scope.audioAmbiente.setVolume(0.6);
+        $scope.audioAmbiente.setVolume(0.5);
         $scope.audioAmbiente.playPause();
       };
   
@@ -84,28 +84,29 @@
       };
       $scope.tocarTimao = function () {
         $scope.audioAmbiente.playPause();
-        $scope.audioTimao.setVolume(0.8);
+        $scope.audioTimao.setVolume(0.6);
         $scope.audioTimao.play();
       };
       $scope.tocarExplosao = function () {
-        $scope.audioExplosao.setVolume(0.5);  
+        $scope.audioExplosao.setVolume(0.4);  
         $scope.audioExplosao.play();
+
       };
 
     
       $scope.tocarTrovao = function () {
-        $scope.audioTrovao.setVolume(0.8 );
+        $scope.audioTrovao.setVolume(0.8);
         $scope.audioTrovao.play();
         var msg = '70' ;
         client && client.publish('topicoPrincipal', String(msg));
       };
       $scope.tocarMacaco = function () {
-        $scope.audioMacaco.setVolume(0.2);
+        $scope.audioMacaco.setVolume(0.4);
         $scope.audioMacaco.play();
       };
 
       $scope.tocarSino = function () {
-        $scope.audioSino.setVolume(0.2);
+        $scope.audioSino.setVolume(0.4);
         $scope.audioSino.playPause();
       };
       $scope.tocarObjetos = function () {
@@ -190,8 +191,8 @@
            {"id":"2","texto":"Trovao"},
            {"id":"3","texto":"Sino"},
            {"id":"2","texto":"Ambiente"},
-           {"id":"2","texto":"Medo"},
-           {"id":"2","texto":"Passagem"}];
+           {"id":"2","texto":"Explosao Saida"},
+           {"id":"2","texto":"Derrota"}];
 
     
            $scope.prepararJogo = function() {
