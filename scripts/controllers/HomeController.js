@@ -1,6 +1,7 @@
     (function(){
 
      var client;
+     var messageTemp = "0";
 
      angular.module('app')
      .controller('homeController', homeController);
@@ -16,7 +17,9 @@
        client && client.subscribe('topicoArduinoPronto');
 
        client.on('message', function (topic, message) {
+         if(messageTemp != message){
          console.log(message);
+         messageTemp = message;
 
          if(message=="1"){
           $scope.aguardando = false;
@@ -54,7 +57,8 @@
 
         }}}}}
 
-         $scope.message = message;
+
+        }
        });
 
        $scope.tocarNada = function(){
@@ -117,7 +121,7 @@
               stop = $interval(function() {
                 if (timer1 > 0 ) {
                   timer1 = timer1- 1;
-                  if(timer1 == 60){$scope.tocarSirene();}
+                  if(timer1 == 60){$scope.tocarSino();}
                   $scope.minuto = formatNumber(Math.floor(timer1 / 60));
                   $scope.segundo = formatNumber(timer1%60);
                 } else {
